@@ -1,0 +1,24 @@
+      <div class="jumbotron">
+          <h1 class="display-1">Welcome!</h1>
+          <p class="display-3">Are you ready for some healthy challenge today?</p>
+
+      </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <h2>About Move and Groove</h2>
+            <p>Read <%=link_to "more", welcome_about_path %> about us</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Sign up and start your fitness journey with us!</h2>
+            <p> <%= link_to "Registering", new_user_registration_path %> your user account is free and fast.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Login</h2>
+            <p>Ready for some new <%= link_to "challenge?", new_user_session_path %></p>
+          </div>
+        </div>
+
+        <hr>
+
+

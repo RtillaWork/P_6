@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Move and Groove for openClassrooms">
+  <meta name="author" content="Naura Elchhab">
+  <link rel="icon" href="moveandgroovefavicon.ico">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ 
+  <title>MoveAndGroove</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   </head>
+
+  <body>
+  
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-2">
+      <%= link_to "Move'n'Groove", root_path, class: "navbar-brand"  %>
+    
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%=link_to "About", welcome_about_path, class: "nav-link" %>
+          </li>
+      <% if user_signed_in? %>
+          <li class="nav-item">
+           <%=link_to "Home", activities_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+           <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Logged in as #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Sign off", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+          </li>
+
+          <% if %>
+            <li class="nav-item">
+              <%= link_to "Stop Activity Timer", root_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          
+      <% else %>      
+          <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %> |
+          </li>
+
+      <% end %>
+    </ul>
+      
+  </nav>
+  
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+  <div class="container">
+ 
+    <%= yield %>
+  
+  </div>
+
+   
+   <footer class="footer mt-auto py-3">
+    <div class="container text-center">
+      <span class="text-muted">   <p>&copy; Move and Groove 2018-2019</p>
+      <small> It is <%= Time.now %></small>
+      <em>Current activity: <%=  ApplicationRecord::activity_in_progress %></em>
+    </span>
+    </div>
+  </footer>
+
+ <!-- Bootstrap Javascript -->
+</body>
+
+</html>

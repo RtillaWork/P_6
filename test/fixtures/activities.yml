@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_time: 2019-03-29 03:43:09
+  end_time: 2019-03-29 03:43:09
+  duration: 2019-03-29 03:43:09
+  user: one
+  activity_type: one
+
+two:
+  name: MyString
+  start_time: 2019-03-29 03:43:09
+  end_time: 2019-03-29 03:43:09
+  duration: 2019-03-29 03:43:09
+  user: two
+  activity_type: two

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @activity_type.name %>
+</p>
+
+<p>
+  <strong>Fa icon:</strong>
+  <%= @activity_type.fa_icon %>
+</p>
+
+<p>
+  <strong>Alt icon:</strong>
+  <%= @activity_type.alt_icon %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @activity_type.category %>
+</p>
+
+<p>
+  <strong>Intensity:</strong>
+  <%= @activity_type.intensity %>
+</p>
+
+<%= link_to 'Edit', edit_activity_type_path(@activity_type) %> |
+<%= link_to 'Back', activity_types_path %>

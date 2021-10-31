@@ -1,0 +1,50 @@
+<%# provide(:@activity.activity_type.name) %>
+
+<hgroup>
+  <h1 class="text-right"><em>My <%= @activity.activity_type.name %>  Activity </em></h1>
+</hgroup>
+
+<div class="d-flex flex-column">
+
+
+  <div class="jumbotron">
+  <hgroup>
+  <h1 class="display-4 text-center"><%= font_awesome_tag(@activity.activity_type.fa_icon, "10rem") %> <%= @activity.activity_type.category %></h1>
+  <h2><p class="lead">Date: <%= @activity.start_time.to_s(:short) %></p></h2>
+  </hgroup>
+  <hr class="my-2">
+  
+  <% unless @activity.duration.nil? %>
+    <div class="mt-4">
+      <p class="lead">You <%= activity_verb_past_helper(@activity.activity_type.name) %> for <%= @activity.duration %> minutes. <%= activity_motivational_helper(@activity.duration) %> </p>
+      <hr class="my-4">
+      
+               
+              <div class="btn-group">
+                <%= link_to 'Delete', @activity,  class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+    </div>
+  <% end %>
+  
+
+  </div>  <!-- jumbotron -->
+  
+<%= link_to 'Edit this Activity', edit_activity_path(@activity),  class: "btn btn-md btn-warning" %>
+<%= link_to 'Back', activities_path,  class: "btn btn-md btn-info" %>
+
+</div> <!-- d-flex -->
+
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+  <div class="shadow mb-3 rounded text-white" style="background-image:url(<%= activity_picture_url(@activity.activity_type.name) %>); background-size: cover; background-position: center;">
+    <div class="p-3 rounded d-flex justify-content-between flex-sm-row flex-column" style="background-color: rgba(0,0,0,0.5)">
+      <div class="display-4"><%= font_awesome_tag(@activity.activity_type.fa_icon, "10rem") %> <%= @activity.activity_type.name %></div>
+      <div class="d-flex align-items-center">
+        <a href="#" class="btn btn-primary d-inline-block"><i class="fas fa-clock mr-2"></i> <%= @activity.duration %> minutes. </a>
+      </div>
+    </div>
+  </div>
+</div>

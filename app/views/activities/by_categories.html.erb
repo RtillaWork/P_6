@@ -1,0 +1,66 @@
+<%# provide(:@activity.activity_type.name) %>
+
+<hgroup>
+  <h1 class="text-right"><em>Activities count: <%= @activities.count %></em></h1>
+</hgroup>
+
+ <%= link_to 'Show By Date', activities_path,  class: "btn btn-md btn-info my-5 w-100"  %>
+ <%= link_to 'New Activity', new_activity_path,  class: "btn btn-md btn-success w-100"  %>
+
+ 
+<div class="d-flex flex-wrap">
+
+
+
+  <%# @activities.each do |activity| %>
+<% @all_activities_same_type.each do |activity_type, same_activities| %>
+   <div class="container my-1">
+    <h2 class="display-2">
+    <a class="btn btn-lg btn-primary w-25" data-toggle="collapse" href= <%= '#' + activity_type.name.to_s %> >
+      <%= font_awesome_tag(activity_type.fa_icon, "10rem") %>  <%= activity_type.name %> 
+    </a>     
+  </h2>
+   </div>
+
+ <div class="collapse" id= <%= activity_type.name.to_s %> >
+
+  <% same_activities.each do |activity| %>
+  <%# [r, g, b, a] = activity_color_rgba(activity) %>
+    <div class="container mb-3" >
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+      <div class="shadow mb-3 rounded text-white position-relative"  style = "background-color: <%= activity_css_rgba(activity) %>" >    
+      <div class="p-3 rounded d-flex justify-content-between flex-sm-row flex-column" style="background-color: rgba(0,0,0,0.5)">
+          <div class="display-4"> 
+          <%= activity_verb_past_helper(activity.activity_type.name).capitalize %> on <%= DateTime.parse(activity.start_time.to_s).strftime("%B %d") %> at <%= activity.start_time.to_s(:time) %>
+          </div>
+          
+      <div class="d-flex align-items-center">
+        <%= link_to 'Details', activity, class: "btn btn-md btn-info d-inline-block stretched-link" %>       
+      </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
+ 
+ </div>  <!-- container -->
+
+      <% end %>
+
+</div>  <!-- collapsed -->
+
+     <% end %>
+
+
+ 
+</div>
+
+
+
+
+
+
+
+
+

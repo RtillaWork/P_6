@@ -1,0 +1,49 @@
+<%# provide(:@activity.activity_type.name) %>
+
+<hgroup>
+  <h1 class="text-right"><em>Activities count: <%= @activities.count %></em></h1>
+</hgroup>
+  <%= link_to 'Show By Category', activities_by_categories_path,  class: "btn btn-md btn-info my-3 w-100"  %>
+  <%= link_to 'New Activity', new_activity_path,  class: "btn btn-md btn-success my-2 w-100"  %>
+
+ 
+<div class="d-flex flex-wrap">
+
+  <%# @activities.each do |activity| %>
+   <% @all_activities_same_date.each do |date, activities| %>
+   <div class="container my-1">
+    <h2 class="display-2"> <%= DateTime.parse(date).strftime("%B %d") %> </h2>
+   </div>
+  <% activities.each do |activity| %>
+  <%# [r, g, b, a] = activity_color_rgba(activity) %>
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+      <div class="shadow mb-3 rounded text-white position-relative"  style = "background-color: <%= activity_css_rgba(activity) %>" >    
+      <div class="p-3 rounded d-flex justify-content-between flex-sm-row flex-column" style="background-color: rgba(0,0,0,0.5)">
+          <div class="display-4"><%= font_awesome_tag(activity.activity_type.fa_icon, "10rem") %> <%= activity_verb_past_helper(activity.activity_type.name).capitalize %> at <%= activity.start_time.to_s(:time) %></div>
+          <div class="d-flex align-items-center">
+            <%= link_to 'Details', activity, class: "btn btn-md btn-info d-inline-block stretched-link" %>       
+           </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
+ 
+ </div>  <!-- container -->
+
+      <% end %>
+     <% end %>
+
+
+ 
+</div>
+
+
+
+
+
+
+
+
