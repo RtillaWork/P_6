@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # attr_accessor :current_user_activity
 
-  # Naura: current activity (last one non nil) for current_user OR nil = no current activity
+  #  RtillaWork: current activity (last one non nil) for current_user OR nil = no current activity
   # return ongoing current activity or nil
   def user_current_activity
     if user_signed_in?
@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  # Naura for OC: Customize devise redirect after login
+  #  RtillaWork for OC: Customize devise redirect after login
   def after_sign_in_path_for(_user)
     activities_path
   end

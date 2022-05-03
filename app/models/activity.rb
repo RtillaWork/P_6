@@ -6,7 +6,7 @@ class Activity < ApplicationRecord
   # 	Activity.find_by(:end_time == nil)
   # end
 
-  # Naura: current activity (last one non nil) for current_user OR nil = no current activity
+  #  RtillaWork: current activity (last one non nil) for current_user OR nil = no current activity
   # return ongoing current activity or nil WARNING replace .nil? with .blank? or better .empty? when used
 
   # scope :user_current_activity, -> { where(user_id: current_user.id, duration: nil).order(start_time: :desc).limit(1).first if  user_signed_in?}

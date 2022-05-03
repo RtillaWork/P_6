@@ -75,7 +75,7 @@ class ActivitiesController < ApplicationController
   # PATCH/PUT /activities/1
   def update
 
-    # Naura: ensuring end_time, duration = ni, nil OR duration = end_time - start_time
+    #  RtillaWork: ensuring end_time, duration = ni, nil OR duration = end_time - start_time
     # updated_activity = @activity.dup
     # updated_activity.attributes = activity_params
     #@activity.attributes = activity_params
@@ -115,7 +115,7 @@ class ActivitiesController < ApplicationController
 
   # Only allow this white list params.
   def activity_params
-    # Naura: user_id not included in .permit for added security
+    #  RtillaWork: user_id not included in .permit for added security
     # , as form_with would build parameters on all @activity fields
     #processed_params =
     params.require(:activity)

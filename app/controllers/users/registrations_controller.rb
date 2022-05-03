@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    # Naura/openCR: first user is the admin
+    #  RtillaWork/openCR: first user is the admin
     if User.count == 1
       User.first.update_attributes(admin: true)
     end

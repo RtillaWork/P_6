@@ -5,7 +5,7 @@ ruby '2.5.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
-# Use postgresql as the DB for Active Record / Heroku required / NOTE: Naura
+# Use postgresql as the DB for Active Record / Heroku required / NOTE:  RtillaWork
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# NOTE added by Naura for Proj6 openClassrooms
+# NOTE added by  RtillaWork for Proj6 openClassrooms
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise'

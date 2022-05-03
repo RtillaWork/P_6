@@ -24,6 +24,6 @@ production:
   <<: *default
   adapter: postgresql
   database: db/production.postgres
-  username: nauranas
+  username:  nnas
   password: <%= ENV['OPENCLASSROOMS'] %>
   
