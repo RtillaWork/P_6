@@ -1,5 +1,0 @@
-https://obscure-shelf-87348.herokuapp.com/
-
-admin account: admin@m.com / password
-u1: u1@m.c / password
-u2: u2@m.c / password

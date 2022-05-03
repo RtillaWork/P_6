@@ -1,24 +1,13 @@
-# README
+# Track your fitness habits
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Combine a Ruby on Rails back-end with a front-end in React to build a cool activity tracker, 
+allowing you to add activities and monitor your overall fitness trends.
 
-Things you may want to cover:
+### Skills acquired in this project
 
-* Ruby version
+Perform basic programming tasks with Ruby
+Create a Rails app
+Use Ruby with a database
+Handle user logins securely with the Devise Rubygem
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
