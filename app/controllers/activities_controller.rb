@@ -17,8 +17,8 @@ class ActivitiesController < ApplicationController
       # ongoing current activity
       redirect_to action: :edit, id: @current_activity.id
     else
-    # @activities = Activity.all
-    @activities = current_user.activities
+      # @activities = Activity.all
+      @activities = current_user.activities
     end
   end
 
@@ -35,8 +35,8 @@ class ActivitiesController < ApplicationController
       # ongoing current activity
       redirect_to action: :edit, id: @current_activity.id
     else
-    # @activities = Activity.all
-    @activities = current_user.activities
+      # @activities = Activity.all
+      @activities = current_user.activities
     end
   end
 
@@ -47,14 +47,14 @@ class ActivitiesController < ApplicationController
       # ongoing current activity
       redirect_to action: :edit, id: @current_activity.id
     else
-    # @activity as routed
-    @activity
+      # @activity as routed
+      @activity
     end
   end
 
   # GET /activities/new
   def new
-    @activity = Activity.new    
+    @activity = Activity.new
   end
 
   # GET /activities/1/edit
@@ -62,74 +62,74 @@ class ActivitiesController < ApplicationController
   end
 
   # POST /activities
-   def create
+  def create
     @activity = Activity.new(activity_params)
     # current_user.activities << @activity
-       if @activity.save
-        redirect_to @activity, notice: 'Activity was successfully created.'
-      else
-        render :new   
-      end
-   end
+    if @activity.save
+      redirect_to @activity, notice: 'Activity was successfully created.'
+    else
+      render :new
+    end
+  end
 
-  
   # PATCH/PUT /activities/1
   def update
-      
-      # Naura: ensuring end_time, duration = ni, nil OR duration = end_time - start_time
-      # updated_activity = @activity.dup
-      # updated_activity.attributes = activity_params
-      #@activity.attributes = activity_params
-      # if @activity.end_time.nil?  || (@activity.end_time.to_i < @activity.start_time.to_i)
-      #   @activity.end_time , @activity.duration = nil, nil
-      # else
-      #   @activity.duration = Time.parse(@activity.end_time) - Time.parse(@activity.start_time)
-      #   raise @activity.inspect
-      #   # Debug redirect_to welcome_home_path and return
-      # end
-      # @activity = updated_activity.dup
-      # if @activity.save
-      if @activity.update(activity_params)
-        redirect_to @activity, notice: 'Activity was successfully updated.'
-      else
-        render :edit
-      end
+
+    # Naura: ensuring end_time, duration = ni, nil OR duration = end_time - start_time
+    # updated_activity = @activity.dup
+    # updated_activity.attributes = activity_params
+    #@activity.attributes = activity_params
+    # if @activity.end_time.nil?  || (@activity.end_time.to_i < @activity.start_time.to_i)
+    #   @activity.end_time , @activity.duration = nil, nil
+    # else
+    #   @activity.duration = Time.parse(@activity.end_time) - Time.parse(@activity.start_time)
+    #   raise @activity.inspect
+    #   # Debug redirect_to welcome_home_path and return
+    # end
+    # @activity = updated_activity.dup
+    # if @activity.save
+    if @activity.update(activity_params)
+      redirect_to @activity, notice: 'Activity was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   # DELETE /activities/1
   def destroy
     @activity.destroy
-    redirect_to activities_url, notice: 'Activity was successfully destroyed.'    
+    redirect_to activities_url, notice: 'Activity was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_activity
-      @activity = Activity.find(params[:id])
-      if @activity.user_id == current_user.id
-         @activity
-      else
-        redirect_to root_path, notice: 'DEBUG activity user id mismatch'
-      end      
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_activity
+    @activity = Activity.find(params[:id])
+    if @activity.user_id == current_user.id
+      @activity
+    else
+      redirect_to root_path, notice: 'DEBUG activity user id mismatch'
     end
+  end
 
-    # Only allow this white list params.
-    def activity_params
-      # Naura: user_id not included in .permit for added security
-      # , as form_with would build parameters on all @activity fields
-      #processed_params = 
-      params.require(:activity)
-      .permit(:start_time, :duration, :activity_type_id)
-      .merge(user_id: current_user.id)
+  # Only allow this white list params.
+  def activity_params
+    # Naura: user_id not included in .permit for added security
+    # , as form_with would build parameters on all @activity fields
+    #processed_params =
+    params.require(:activity)
+          .permit(:start_time, :duration, :activity_type_id)
+          .merge(user_id: current_user.id)
 
-      # if processed_params[:end_time].nil?  || (processed_params[:end_time].to_i < processed_params[:start_time].to_i)
-      #   processed_params[:end_time] , processed_params[:duration] = nil, nil
-      # else
-      #   processed_params[:duration] = 
-      #   ( DateTime.parse(processed_params[:end_time]) - DateTime.parse(processed_params[:start_time]) )
-      #   .to_s(:iso8601)
-      # end
+    # if processed_params[:end_time].nil?  || (processed_params[:end_time].to_i < processed_params[:start_time].to_i)
+    #   processed_params[:end_time] , processed_params[:duration] = nil, nil
+    # else
+    #   processed_params[:duration] =
+    #   ( DateTime.parse(processed_params[:end_time]) - DateTime.parse(processed_params[:start_time]) )
+    #   .to_s(:iso8601)
+    # end
 
-      #processed_params
-    end
+    #processed_params
+  end
 end

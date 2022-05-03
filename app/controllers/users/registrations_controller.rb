@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    
+
     # Naura/openCR: first user is the admin
     if User.count == 1
       User.first.update_attributes(admin: true)

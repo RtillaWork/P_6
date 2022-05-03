@@ -1,24 +1,56 @@
-BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS `activity_types` (
-	`id`	integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`name`	varchar,
-	`fa_icon`	varchar,
-	`alt_icon`	varchar,
-	`category`	varchar,
-	`intensity`	varchar,
-	`created_at`	datetime NOT NULL,
-	`updated_at`	datetime NOT NULL
+BEGIN
+TRANSACTION;
+CREATE TABLE IF NOT EXISTS `activity_types`
+(
+    `id`
+    integer
+    NOT
+    NULL
+    PRIMARY
+    KEY
+    AUTOINCREMENT,
+    `name`
+    varchar,
+    `fa_icon`
+    varchar,
+    `alt_icon`
+    varchar,
+    `category`
+    varchar,
+    `intensity`
+    varchar,
+    `created_at`
+    datetime
+    NOT
+    NULL,
+    `updated_at`
+    datetime
+    NOT
+    NULL
 );
-INSERT INTO `activity_types` (id,name,fa_icon,alt_icon,category,intensity,created_at,updated_at) VALUES (8,'Running','fa-running','running.jpg','Cardio','4','2019-04-06 01:47:49.390116','2019-04-06 01:47:49.390116'),
- (9,'Walking','fa-walking','walking.jpg','Cardio','1','2019-04-06 01:48:56.081200','2019-04-06 01:48:56.081200'),
- (10,'Cycling','fa-bicycle','cycling.jpg','Cardio','3','2019-04-06 01:49:52.096640','2019-04-06 01:50:01.023754'),
- (11,'Swimming','fa-swimming-pool','swimming.jpg','Cardio','5','2019-04-06 01:50:46.428832','2019-04-06 01:50:46.428832'),
- (12,'Strength Training','fa-dumbbell','dumbbell.jpg','Strength','4','2019-04-06 01:51:22.539100','2019-04-06 01:53:00.064799'),
- (13,'Hicking','fa-hiking','hicking.jpg','Endurance','4','2019-04-06 01:52:27.293766','2019-04-06 01:52:27.293766'),
- (14,'Nordic Skiing','fa-skiing-nordic','skiing-nordic.jpg','Endurance','4','2019-04-06 01:53:56.612062','2019-04-06 01:53:56.612062'),
- (15,'Skiing','fa-skiing','skiing.jpg','Dexterity','3','2019-04-06 01:54:31.059161','2019-04-06 01:54:31.059161'),
- (16,'Skating','fa-skating','skating.jpg','Dexterity','2','2019-04-06 01:55:20.579405','2019-04-06 01:55:20.579405'),
- (17,'Snowboarding','fa-snowboarding','snowboarding.jpg','Dexterity','4','2019-04-06 01:56:07.879152','2019-04-06 01:56:07.879152'),
- (18,'Hockey','fa-hockey-puck','hockey.jpg','Endurance','5','2019-04-06 01:56:41.988215','2019-04-06 01:56:41.988215'),
- (19,'Table Tennis','fa-table-tennis','table-tennis','Cardio','5','2019-04-06 01:57:24.406527','2019-04-06 01:57:24.406527');
+INSERT INTO `activity_types` (id, name, fa_icon, alt_icon, category, intensity, created_at, updated_at)
+VALUES (8, 'Running', 'fa-running', 'running.jpg', 'Cardio', '4', '2019-04-06 01:47:49.390116',
+        '2019-04-06 01:47:49.390116'),
+       (9, 'Walking', 'fa-walking', 'walking.jpg', 'Cardio', '1', '2019-04-06 01:48:56.081200',
+        '2019-04-06 01:48:56.081200'),
+       (10, 'Cycling', 'fa-bicycle', 'cycling.jpg', 'Cardio', '3', '2019-04-06 01:49:52.096640',
+        '2019-04-06 01:50:01.023754'),
+       (11, 'Swimming', 'fa-swimming-pool', 'swimming.jpg', 'Cardio', '5', '2019-04-06 01:50:46.428832',
+        '2019-04-06 01:50:46.428832'),
+       (12, 'Strength Training', 'fa-dumbbell', 'dumbbell.jpg', 'Strength', '4', '2019-04-06 01:51:22.539100',
+        '2019-04-06 01:53:00.064799'),
+       (13, 'Hicking', 'fa-hiking', 'hicking.jpg', 'Endurance', '4', '2019-04-06 01:52:27.293766',
+        '2019-04-06 01:52:27.293766'),
+       (14, 'Nordic Skiing', 'fa-skiing-nordic', 'skiing-nordic.jpg', 'Endurance', '4', '2019-04-06 01:53:56.612062',
+        '2019-04-06 01:53:56.612062'),
+       (15, 'Skiing', 'fa-skiing', 'skiing.jpg', 'Dexterity', '3', '2019-04-06 01:54:31.059161',
+        '2019-04-06 01:54:31.059161'),
+       (16, 'Skating', 'fa-skating', 'skating.jpg', 'Dexterity', '2', '2019-04-06 01:55:20.579405',
+        '2019-04-06 01:55:20.579405'),
+       (17, 'Snowboarding', 'fa-snowboarding', 'snowboarding.jpg', 'Dexterity', '4', '2019-04-06 01:56:07.879152',
+        '2019-04-06 01:56:07.879152'),
+       (18, 'Hockey', 'fa-hockey-puck', 'hockey.jpg', 'Endurance', '5', '2019-04-06 01:56:41.988215',
+        '2019-04-06 01:56:41.988215'),
+       (19, 'Table Tennis', 'fa-table-tennis', 'table-tennis', 'Cardio', '5', '2019-04-06 01:57:24.406527',
+        '2019-04-06 01:57:24.406527');
 COMMIT;

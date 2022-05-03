@@ -4,9 +4,9 @@
       <h2><%= pluralize(activity_type.errors.count, "error") %> prohibited this activity_type from being saved:</h2>
 
       <ul>
-      <% activity_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% activity_type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

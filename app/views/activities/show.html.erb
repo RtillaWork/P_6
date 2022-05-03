@@ -5,43 +5,46 @@
 <div class="d-flex flex-column">
 
 
-<div class="container my-5">
-<% unless @activity.duration.nil? %>  
-  <div class="row">
+  <div class="container my-5">
+    <% unless @activity.duration.nil? %>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="shadow mb-3 rounded text-white" style="background-image:url(<%= activity_picture_url(@activity.activity_type.name) %>); background-size: cover; background-position: center;">
+            <div class="p-3 rounded d-flex justify-content-between flex-sm-row flex-column" style="background-color: rgba(0,0,0,0.5)">
+              <div class="display-4"><%= font_awesome_tag(@activity.activity_type.fa_icon, "10rem") %> <%= @activity.activity_type.name %></div>
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-primary d-inline-block"><i class="fas fa-clock mr-2"></i> <%= pluralize(@activity.duration, 'minute') %>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+
     <div class="col-lg-10 offset-lg-1">
-  <div class="shadow mb-3 rounded text-white" style="background-image:url(<%= activity_picture_url(@activity.activity_type.name) %>); background-size: cover; background-position: center;">
-    <div class="p-3 rounded d-flex justify-content-between flex-sm-row flex-column" style="background-color: rgba(0,0,0,0.5)">
-      <div class="display-4"><%= font_awesome_tag(@activity.activity_type.fa_icon, "10rem") %> <%= @activity.activity_type.name %></div>
-      <div class="d-flex align-items-center">
-        <a href="#" class="btn btn-primary d-inline-block"><i class="fas fa-clock mr-2"></i> <%= pluralize(@activity.duration, 'minute') %>  </a>
+      <div class="row shadow rounded " style="background-color: rgba(0,0,0,0.5)">
+
+        <div class="text-grey p-3">
+          <hgroup>
+            <h1 class="display-5 text-right">You <%= activity_verb_past_helper(@activity.activity_type.name) %>
+              the <%= @activity.start_time.to_s(:short) %></h1>
+            <h2 class="text-right"><small> You exercised for a whole <%= pluralize(@activity.duration, 'minute') %>
+              . <%= activity_motivational_helper(@activity.duration) %></small></h2>
+          </hgroup>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
- </div>
-  <% end %>
 
-  
-   <div class="col-lg-10 offset-lg-1">
- <div class="row shadow rounded "  style="background-color: rgba(0,0,0,0.5)">
 
-      <div class="text-grey p-3">
-      <hgroup> 
-          <h1 class="display-5 text-right">You <%= activity_verb_past_helper(@activity.activity_type.name) %> the <%= @activity.start_time.to_s(:short) %></h1>
-          <h2 class="text-right"> <small> You exercised for a whole <%= pluralize(@activity.duration, 'minute') %>. <%= activity_motivational_helper(@activity.duration) %></small></h2>
-      </hgroup>
-      </div>
- </div>
- </div>
- 
- </div>
 
- 
-
-  <%= link_to 'Back', activities_path,  class: "btn btn-md btn-info mb-2" %>
+  <%= link_to 'Back', activities_path, class: "btn btn-md btn-info mb-2" %>
   <% unless @activity.duration.nil? %>
-    <%= link_to 'Edit this Activity', edit_activity_path(@activity),  class: "btn btn-md btn-warning  mb-2" %>
-    <%= link_to 'Delete', @activity,  class: "btn btn-sm btn-danger  mb-3", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit this Activity', edit_activity_path(@activity), class: "btn btn-md btn-warning  mb-2" %>
+    <%= link_to 'Delete', @activity, class: "btn btn-sm btn-danger  mb-3", method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 
 </div> <!-- d-flex -->

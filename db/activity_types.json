@@ -1,122 +1,122 @@
 [
-    {
-        "alt_icon": "running.jpg",
-        "category": "Cardio",
-        "created_at": "2019-04-06 01:47:49.390116",
-        "fa_icon": "fa-running",
-        "id": "8",
-        "intensity": "4",
-        "name": "Running",
-        "updated_at": "2019-04-06 01:47:49.390116"
-    },
-    {
-        "alt_icon": "walking.jpg",
-        "category": "Cardio",
-        "created_at": "2019-04-06 01:48:56.081200",
-        "fa_icon": "fa-walking",
-        "id": "9",
-        "intensity": "1",
-        "name": "Walking",
-        "updated_at": "2019-04-06 01:48:56.081200"
-    },
-    {
-        "alt_icon": "cycling.jpg",
-        "category": "Cardio",
-        "created_at": "2019-04-06 01:49:52.096640",
-        "fa_icon": "fa-bicycle",
-        "id": "10",
-        "intensity": "3",
-        "name": "Cycling",
-        "updated_at": "2019-04-06 01:50:01.023754"
-    },
-    {
-        "alt_icon": "swimming.jpg",
-        "category": "Cardio",
-        "created_at": "2019-04-06 01:50:46.428832",
-        "fa_icon": "fa-swimming-pool",
-        "id": "11",
-        "intensity": "5",
-        "name": "Swimming",
-        "updated_at": "2019-04-06 01:50:46.428832"
-    },
-    {
-        "alt_icon": "dumbbell.jpg",
-        "category": "Strength",
-        "created_at": "2019-04-06 01:51:22.539100",
-        "fa_icon": "fa-dumbbell",
-        "id": "12",
-        "intensity": "4",
-        "name": "Strength Training",
-        "updated_at": "2019-04-06 01:53:00.064799"
-    },
-    {
-        "alt_icon": "hicking.jpg",
-        "category": "Endurance",
-        "created_at": "2019-04-06 01:52:27.293766",
-        "fa_icon": "fa-hiking",
-        "id": "13",
-        "intensity": "4",
-        "name": "Hicking",
-        "updated_at": "2019-04-06 01:52:27.293766"
-    },
-    {
-        "alt_icon": "skiing-nordic.jpg",
-        "category": "Endurance",
-        "created_at": "2019-04-06 01:53:56.612062",
-        "fa_icon": "fa-skiing-nordic",
-        "id": "14",
-        "intensity": "4",
-        "name": "Nordic Skiing",
-        "updated_at": "2019-04-06 01:53:56.612062"
-    },
-    {
-        "alt_icon": "skiing.jpg",
-        "category": "Dexterity",
-        "created_at": "2019-04-06 01:54:31.059161",
-        "fa_icon": "fa-skiing",
-        "id": "15",
-        "intensity": "3",
-        "name": "Skiing",
-        "updated_at": "2019-04-06 01:54:31.059161"
-    },
-    {
-        "alt_icon": "skating.jpg",
-        "category": "Dexterity",
-        "created_at": "2019-04-06 01:55:20.579405",
-        "fa_icon": "fa-skating",
-        "id": "16",
-        "intensity": "2",
-        "name": "Skating",
-        "updated_at": "2019-04-06 01:55:20.579405"
-    },
-    {
-        "alt_icon": "snowboarding.jpg",
-        "category": "Dexterity",
-        "created_at": "2019-04-06 01:56:07.879152",
-        "fa_icon": "fa-snowboarding",
-        "id": "17",
-        "intensity": "4",
-        "name": "Snowboarding",
-        "updated_at": "2019-04-06 01:56:07.879152"
-    },
-    {
-        "alt_icon": "hockey.jpg",
-        "category": "Endurance",
-        "created_at": "2019-04-06 01:56:41.988215",
-        "fa_icon": "fa-hockey-puck",
-        "id": "18",
-        "intensity": "5",
-        "name": "Hockey",
-        "updated_at": "2019-04-06 01:56:41.988215"
-    },
-    {
-        "alt_icon": "table-tennis",
-        "category": "Cardio",
-        "created_at": "2019-04-06 01:57:24.406527",
-        "fa_icon": "fa-table-tennis",
-        "id": "19",
-        "intensity": "5",
-        "name": "Table Tennis",
-        "updated_at": "2019-04-06 01:57:24.406527"
-    }
+  {
+    "alt_icon": "running.jpg",
+    "category": "Cardio",
+    "created_at": "2019-04-06 01:47:49.390116",
+    "fa_icon": "fa-running",
+    "id": "8",
+    "intensity": "4",
+    "name": "Running",
+    "updated_at": "2019-04-06 01:47:49.390116"
+  },
+  {
+    "alt_icon": "walking.jpg",
+    "category": "Cardio",
+    "created_at": "2019-04-06 01:48:56.081200",
+    "fa_icon": "fa-walking",
+    "id": "9",
+    "intensity": "1",
+    "name": "Walking",
+    "updated_at": "2019-04-06 01:48:56.081200"
+  },
+  {
+    "alt_icon": "cycling.jpg",
+    "category": "Cardio",
+    "created_at": "2019-04-06 01:49:52.096640",
+    "fa_icon": "fa-bicycle",
+    "id": "10",
+    "intensity": "3",
+    "name": "Cycling",
+    "updated_at": "2019-04-06 01:50:01.023754"
+  },
+  {
+    "alt_icon": "swimming.jpg",
+    "category": "Cardio",
+    "created_at": "2019-04-06 01:50:46.428832",
+    "fa_icon": "fa-swimming-pool",
+    "id": "11",
+    "intensity": "5",
+    "name": "Swimming",
+    "updated_at": "2019-04-06 01:50:46.428832"
+  },
+  {
+    "alt_icon": "dumbbell.jpg",
+    "category": "Strength",
+    "created_at": "2019-04-06 01:51:22.539100",
+    "fa_icon": "fa-dumbbell",
+    "id": "12",
+    "intensity": "4",
+    "name": "Strength Training",
+    "updated_at": "2019-04-06 01:53:00.064799"
+  },
+  {
+    "alt_icon": "hicking.jpg",
+    "category": "Endurance",
+    "created_at": "2019-04-06 01:52:27.293766",
+    "fa_icon": "fa-hiking",
+    "id": "13",
+    "intensity": "4",
+    "name": "Hicking",
+    "updated_at": "2019-04-06 01:52:27.293766"
+  },
+  {
+    "alt_icon": "skiing-nordic.jpg",
+    "category": "Endurance",
+    "created_at": "2019-04-06 01:53:56.612062",
+    "fa_icon": "fa-skiing-nordic",
+    "id": "14",
+    "intensity": "4",
+    "name": "Nordic Skiing",
+    "updated_at": "2019-04-06 01:53:56.612062"
+  },
+  {
+    "alt_icon": "skiing.jpg",
+    "category": "Dexterity",
+    "created_at": "2019-04-06 01:54:31.059161",
+    "fa_icon": "fa-skiing",
+    "id": "15",
+    "intensity": "3",
+    "name": "Skiing",
+    "updated_at": "2019-04-06 01:54:31.059161"
+  },
+  {
+    "alt_icon": "skating.jpg",
+    "category": "Dexterity",
+    "created_at": "2019-04-06 01:55:20.579405",
+    "fa_icon": "fa-skating",
+    "id": "16",
+    "intensity": "2",
+    "name": "Skating",
+    "updated_at": "2019-04-06 01:55:20.579405"
+  },
+  {
+    "alt_icon": "snowboarding.jpg",
+    "category": "Dexterity",
+    "created_at": "2019-04-06 01:56:07.879152",
+    "fa_icon": "fa-snowboarding",
+    "id": "17",
+    "intensity": "4",
+    "name": "Snowboarding",
+    "updated_at": "2019-04-06 01:56:07.879152"
+  },
+  {
+    "alt_icon": "hockey.jpg",
+    "category": "Endurance",
+    "created_at": "2019-04-06 01:56:41.988215",
+    "fa_icon": "fa-hockey-puck",
+    "id": "18",
+    "intensity": "5",
+    "name": "Hockey",
+    "updated_at": "2019-04-06 01:56:41.988215"
+  },
+  {
+    "alt_icon": "table-tennis",
+    "category": "Cardio",
+    "created_at": "2019-04-06 01:57:24.406527",
+    "fa_icon": "fa-table-tennis",
+    "id": "19",
+    "intensity": "5",
+    "name": "Table Tennis",
+    "updated_at": "2019-04-06 01:57:24.406527"
+  }
 ]

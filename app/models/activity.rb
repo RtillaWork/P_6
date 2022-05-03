@@ -13,11 +13,9 @@ class Activity < ApplicationRecord
 
   # return  the lastest completed activity, WARNING same as above
   # scope :user_previous_activity, -> { where(user_id: current_user.id).where.not(duration: nil).order(start_time: :desc).limit(1).first if  user_signed_in?}
- 
-  
+
   # scope :all_activities_by_type, -> (activity_type) { current_user.activities.where(user_id: current_user.id, activity_type: activity_type.id).order(start_time: :desc) if  user_signed_in? }
 
   # scope :all_activities_by_type, -> (activity_type) { where(user_id: current_user.id, activity_type: activity_type.id).order(start_time: :desc) if  user_signed_in? }
 
- 
 end

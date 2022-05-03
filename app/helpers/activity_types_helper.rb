@@ -1,2 +1,2 @@
-module ActivityTypesHelper 
+module ActivityTypesHelper
 end

@@ -1,7 +1,7 @@
 <%# provide(:page_title, @activity.activity_type.name) %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,86 +10,83 @@
   <link rel="icon" href="moveandgroovefavicon.ico">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,800,800i,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,800,800i,900i" rel="stylesheet">
   <title>MoveAndGroove</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-   </head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-
-
-
-  <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-2 sticky-top">
-<div class="container">
-        <%= link_to "Move'n'Groove", root_path, class: "navbar-brand"  %>
-
-         <% if user_signed_in? %>
-          <%#= yield :page_title %>
-         <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<body>
 
 
-        <ul class="nav navbar-nav ml-auto">
-      
+<nav class="navbar navbar-expand-md navbar-dark bg-primary mb-2 sticky-top">
+  <div class="container">
+    <%= link_to "Move'n'Groove", root_path, class: "navbar-brand" %>
+
+    <% if user_signed_in? %>
+      <%#= yield :page_title %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+      <ul class="nav navbar-nav ml-auto">
+
         <% if user_signed_in? %>
-            <li class="nav-item">
-            <%=link_to "Home", activities_path, class: "nav-link" %>
-            </li>
+          <li class="nav-item">
+            <%= link_to "Home", activities_path, class: "nav-link" %>
+          </li>
 
-            <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link" %>
-            </li>
+          </li>
 
-            <li class="nav-item">
-              <%= link_to "Welccome #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
-            </li>
-
-            
-       
-            <li class="nav-item">
-              <%= link_to "Sign off", destroy_user_session_path, :method => :delete, class: "nav-link" %>
-            </li>
+          <li class="nav-item">
+            <%= link_to "Welccome #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
+          </li>
 
 
-            <% if current_user.admin %>
+          <li class="nav-item">
+            <%= link_to "Sign off", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+          </li>
+
+
+          <% if current_user.admin %>
             <li class="nav-item">
               <%= link_to "Activity Types Admin", activity_types_path, class: "nav-link" %>
             </li>
 
-            <% end %>
-            
-        <% else %>      
-            <li class="nav-item">
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
+          <% end %>
 
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-            </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
 
-            <li class="nav-item">
-              <%=link_to "About", welcome_about_path, class: "nav-link" %>
-            </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "About", welcome_about_path, class: "nav-link" %>
+          </li>
 
         <% end %>
-      
+
       </ul>
 
-      </div> <!-- collapse toggle -->
-        </div>
-    </nav>
+    </div> <!-- collapse toggle -->
+  </div>
+</nav>
 
 
-    
- <div class="container">   
+<div class="container">
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
@@ -99,86 +96,85 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-  
-      <%= yield %>
-    
 
-    
-    <footer class="footer mt-auto py-3">
-    
-      <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-2 sticky-top">
-<div class="container">
-        <%= link_to "Move'n'Groove", root_path, class: "navbar-brand"  %>
-
-         <% if user_signed_in? %>
-          <%#= yield :page_title %>
-         <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <%= yield %>
 
 
-        <ul class="nav navbar-nav ml-auto">
-      
+
+  <footer class="footer mt-auto py-3">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-2 sticky-top">
+      <div class="container">
+        <%= link_to "Move'n'Groove", root_path, class: "navbar-brand" %>
+
         <% if user_signed_in? %>
-            <li class="nav-item">
-            <%=link_to "Home", activities_path, class: "nav-link" %>
-            </li>
+          <%#= yield :page_title %>
+        <% end %>
 
-            <li class="nav-item">
-            <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link" %>
-            </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li class="nav-item">
-              <%= link_to "Welccome #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
-            </li>
-
-            
-       
-            <li class="nav-item">
-              <%= link_to "Sign off", destroy_user_session_path, :method => :delete, class: "nav-link" %>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
-            <% if current_user.admin %>
-            <li class="nav-item">
-              <%= link_to "Activity Types Admin", activity_types_path, class: "nav-link" %>
-            </li>
+          <ul class="nav navbar-nav ml-auto">
+
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Home", activities_path, class: "nav-link" %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link" %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Welccome #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
+              </li>
+
+
+              <li class="nav-item">
+                <%= link_to "Sign off", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+              </li>
+
+
+              <% if current_user.admin %>
+                <li class="nav-item">
+                  <%= link_to "Activity Types Admin", activity_types_path, class: "nav-link" %>
+                </li>
+
+              <% end %>
+
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "About", welcome_about_path, class: "nav-link" %>
+              </li>
 
             <% end %>
-            
-        <% else %>      
-            <li class="nav-item">
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
 
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-            </li>
+          </ul>
 
-            <li class="nav-item">
-              <%=link_to "About", welcome_about_path, class: "nav-link" %>
-            </li>
-
-        <% end %>
-      
-      </ul>
-
-      </div> <!-- collapse toggle -->
-        </div>
+        </div> <!-- collapse toggle -->
+      </div>
     </nav>
 
-      <div class="d-flex flex-column text-center">
-        <div class="text-muted text-center">&copy; Move and Groove 2018-2019</div>
-        <div class="text-muted text-center"> <small> It is <%= Time.now.to_formatted_s(:long) %></small> </div>
-      </div>
-    </footer>
+    <div class="d-flex flex-column text-center">
+      <div class="text-muted text-center">&copy; Move and Groove 2018-2019</div>
+      <div class="text-muted text-center"><small> It is <%= Time.now.to_formatted_s(:long) %></small></div>
+    </div>
+  </footer>
 
-    </div> <!-- container -->
+</div> <!-- container -->
 
-     
+
 </body>
 </html>

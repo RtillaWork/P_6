@@ -4,5 +4,5 @@ module ApplicationHelper
   def font_awesome_tag(fa_element = 'fa-question-circle', size = '', color = '')
     "<i class='fas #{fa_element} #{size} #{color}'></i>".html_safe
   end
-  
+
 end
