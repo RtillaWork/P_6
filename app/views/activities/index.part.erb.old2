@@ -1,9 +1,0 @@
-
-<% @all_activities_same_type.each do |activity_type, same_activities| %>
-  <%= font_awesome_tag(activity_type.fa_icon, "10rem") %>
-  <br/>
-  <% same_activities.each do |activity| %>
-    <%= activity.activity_type.name %> <br/>
-  <% end %>
-  <% end %>
-  <br/>
